@@ -9,6 +9,7 @@ class Pessoa{
 		Pessoa(std::string nome);
 		Pessoa(std::string nome, unsigned short int idade);
 		Pessoa(std::string nome, unsigned long cpf, unsigned short int idade);
+		~Pessoa();
 
 		unsigned long getCpf();
 		bool setCpf(unsigned long cpf);

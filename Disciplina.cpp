@@ -11,6 +11,7 @@ Disciplina::Disciplina(std::string nome, SalaAula *sala)
 
 Disciplina::~Disciplina()
 {
+	std::cerr << "\nDestruindo disciplina " << this->nome << std::endl;
 	this->setSalaAula(nullptr);
 	std::list<ConteudoMinistrado *>::iterator it;
 	for (it = conteudos.begin(); it != conteudos.end(); it++)
@@ -38,7 +39,7 @@ void Disciplina::removerAluno(unsigned long cpf)
 		alunos.erase(it);
 }
 
-std::list<Pessoa *> &Disciplina::getAlunos()
+std::list<Pessoa *>& Disciplina::getAlunos()
 { //retornamos uma referência para a lista, o que custa mais barato
 	return alunos;
 }

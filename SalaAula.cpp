@@ -1,9 +1,28 @@
 #include "SalaAula.hpp"
+#include <iostream>
 
 SalaAula::SalaAula(std::string nome, unsigned int capacidade)
 	:nome{nome}, capacidade{capacidade}{
 }
-    
+
+
+
+SalaAula::~SalaAula()
+{
+	std::cerr << "\nDestruindo a sala " << this->nome << std::endl;
+
+	std::list<Disciplina *>::iterator it{this->disciplinasMinistradas.begin()};
+	for ( ; it != this->disciplinasMinistradas.end(); it++)
+	{
+		if ((*it)->sala != nullptr)
+		{
+			// setando a sala da disciplina como nullptr
+			(*it)->sala = nullptr;
+		}
+	}
+}
+
+
 std::string SalaAula::getNome(){
 	return nome;
 }

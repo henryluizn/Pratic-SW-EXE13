@@ -2,6 +2,12 @@
 #include "ConteudoMinistrado.hpp"
 #include <iostream>
 
+Console::~Console()
+{
+	std::cerr << "\nDestruindo a classe Console" << std::endl;
+}
+
+
 void Console::imprimirDadosDisciplina(Disciplina& disciplina){
 	std::cout << "Disicplina: "<< disciplina.getNome() << std::endl;
 	if(disciplina.getProfessor() != nullptr)

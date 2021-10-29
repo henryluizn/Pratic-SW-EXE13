@@ -20,6 +20,12 @@ Pessoa::Pessoa(std::string nome, unsigned long cpf, unsigned short int idade)
 		this->cpf = 0;
 }
 
+Pessoa::~Pessoa()
+{
+	std::cerr << "\nDestruindo a pessoa " << this->nome << std::endl;
+}
+
+
 unsigned long Pessoa::getCpf(){
 	//retorna uma cópia do cpf
 	return this->cpf;

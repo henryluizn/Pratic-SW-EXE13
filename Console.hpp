@@ -5,6 +5,7 @@
 
 class Console{
 	public:
+		~Console();
 		static void imprimirDadosDisciplina(Disciplina& disciplina);
 	
 };
